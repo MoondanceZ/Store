@@ -22,7 +22,7 @@ namespace Store.Repository
 
         protected StoreDbContext DataContext
         {
-            get { return dataContext ?? (dataContext = DatabaseFactory.Get()); }
+            get { return dataContext ?? (dataContext = DatabaseFactory.GetDbContext()); }
         }
 
         protected BaseRepository(IDatabaseFactory databaseFactory)

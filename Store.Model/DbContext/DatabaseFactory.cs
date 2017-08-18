@@ -9,7 +9,7 @@ namespace Store.Model.DbContext
     public class DatabaseFactory : Disposable, IDatabaseFactory
     {
         private StoreDbContext dataContext;
-        public StoreDbContext Get()
+        public StoreDbContext GetDbContext()
         {
             return dataContext ?? (dataContext = new StoreDbContext());
         }

@@ -19,7 +19,7 @@ namespace Store.Repository
 
         protected StoreDbContext DataContext
         {
-            get { return dataContext ?? (dataContext = databaseFactory.Get()); }
+            get { return dataContext ?? (dataContext = databaseFactory.GetDbContext()); }
         }
 
         public void Commit()

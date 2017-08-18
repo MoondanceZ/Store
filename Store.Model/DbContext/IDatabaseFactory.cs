@@ -9,6 +9,6 @@ namespace Store.Model.DbContext
 {
     public interface IDatabaseFactory : IDisposable
     {
-        StoreDbContext Get();
+        StoreDbContext GetDbContext();
     }
 }
