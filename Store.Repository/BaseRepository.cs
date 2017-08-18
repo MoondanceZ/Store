@@ -100,9 +100,9 @@ namespace Store.Repository
             return dbset.Where(where).FirstOrDefault<T>();
         }
 
-        public virtual IEnumerable<T> GetAllLazy()
+        public virtual IQueryable<T> GetAllLazy()
         {
-            return dbset;
+            return dbset.AsQueryable();
         }
     }
 }

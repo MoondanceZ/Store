@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Store.Repository.Interface
 {
-    public interface IUserInfoRepository : IRepository<UserInfo>
+    public interface IUserInfoRepository : IBaseRepository<UserInfo>
     {
     }
 }

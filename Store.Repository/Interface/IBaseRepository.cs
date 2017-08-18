@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Store.Repository.Interface
 {
-    public interface IRepository<T> where T : class
+    public interface IBaseRepository<T> where T : class
     {
         void Add(T entity);
         void AddAll(IEnumerable<T> entities);
@@ -22,6 +22,6 @@ namespace Store.Repository.Interface
         T Get(Expression<Func<T, bool>> where);
         IEnumerable<T> GetAll();
         IEnumerable<T> GetMany(Expression<Func<T, bool>> where);
-        IEnumerable<T> GetAllLazy();
+        IQueryable<T> GetAllLazy();
     }
 }
