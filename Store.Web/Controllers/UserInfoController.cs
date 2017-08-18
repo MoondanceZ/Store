@@ -24,18 +24,17 @@ namespace Store.Web.Controllers
         {
 
             List<UserInfo> list = new List<UserInfo>();
-            for (int i = 0; i < 2000; i++)
+            for (int i = 0; i < 20000; i++)
             {
                 list.Add(new UserInfo
                 {
                     Account = "account" + i
                 });
             }
-            //ViewBag.St = DateTime.Now.ToString();
-            //var a = _userInfoRepository;
-            //a.AddAll(list);
+            ViewBag.St = DateTime.Now.ToString();
+            
+            //_userInfoRepository.BulkInsert(list);
             //_unitOfWork.Commit();
-            var a = _userInfoRepository.Get(m => m.Id == 1);
             ViewBag.Et = DateTime.Now.ToString();
             return View();
         }

@@ -12,8 +12,10 @@ namespace Store.Repository.Interface
     {
         void Add(T entity);
         void AddAll(IEnumerable<T> entities);
+        void BulkInsert(IEnumerable<T> entities);
         void Update(T entity);
         void Update(IEnumerable<T> entities);
+        void BulkUpdate(IEnumerable<T> entities);
         void Delete(T entity);
         void Delete(Expression<Func<T, bool>> where);
         void DeleteAll(IEnumerable<T> entities);

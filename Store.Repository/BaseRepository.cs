@@ -1,4 +1,5 @@
-﻿using Store.Model.DbContext;
+﻿using EntityFramework.BulkExtensions;
+using Store.Model.DbContext;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -40,8 +41,11 @@ namespace Store.Repository
         public virtual void AddAll(IEnumerable<T> entities)
         {
             dbset.AddRange(entities);
+        }        
+        public virtual void BulkInsert(IEnumerable<T> entities)
+        {
+            dataContext.BulkInsert(entities);
         }
-
         public virtual void Update(T entity)
         {
             dbset.Attach(entity);
@@ -57,7 +61,10 @@ namespace Store.Repository
                 dataContext.Entry(obj).State = EntityState.Modified;
             }
         }
-
+        public virtual void BulkUpdate(IEnumerable<T> entities)
+        {
+            dataContext.BulkUpdate(entities);
+        }
         public virtual void Delete(T entity)
         {
             dbset.Remove(entity);
