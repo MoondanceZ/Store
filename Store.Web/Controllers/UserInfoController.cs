@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Transactions;
 using System.Web;
 using System.Web.Mvc;
 
@@ -31,7 +32,13 @@ namespace Store.Web.Controllers
                     Account = "account" + i
                 });
             }
-            ViewBag.St = DateTime.Now.ToString();
+            using (var transactionScope = new TransactionScope())
+            {
+                _userInfoRepository.BulkInsert(list);
+                throw new Exception("error");
+                transactionScope.Complete();
+            }
+                ViewBag.St = DateTime.Now.ToString();
             
             //_userInfoRepository.BulkInsert(list);
             //_unitOfWork.Commit();
