@@ -24,25 +24,25 @@ namespace Store.Web.Controllers
         public ActionResult Index()
         {
 
-            List<UserInfo> list = new List<UserInfo>();
-            for (int i = 0; i < 20000; i++)
-            {
-                list.Add(new UserInfo
-                {
-                    Account = "account" + i
-                });
-            }
-            using (var transactionScope = new TransactionScope())
-            {
-                _userInfoRepository.BulkInsert(list);
-                throw new Exception("error");
-                transactionScope.Complete();
-            }
-                ViewBag.St = DateTime.Now.ToString();
+            //List<UserInfo> list = new List<UserInfo>();
+            //for (int i = 0; i < 20000; i++)
+            //{
+            //    list.Add(new UserInfo
+            //    {
+            //        Account = "account" + i
+            //    });
+            //}
+            //using (var transactionScope = new TransactionScope())
+            //{
+            //    _userInfoRepository.BulkInsert(list);
+            //    throw new Exception("error");
+            //    transactionScope.Complete();
+            //}
+            //    ViewBag.St = DateTime.Now.ToString();
             
-            //_userInfoRepository.BulkInsert(list);
-            //_unitOfWork.Commit();
-            ViewBag.Et = DateTime.Now.ToString();
+            ////_userInfoRepository.BulkInsert(list);
+            ////_unitOfWork.Commit();
+            //ViewBag.Et = DateTime.Now.ToString();
             return View();
         }
 
