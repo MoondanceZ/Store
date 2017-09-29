@@ -12,3 +12,7 @@ namespace Store.Web.Tests
         }
     }
 }
+
+
+
+vs studio  
