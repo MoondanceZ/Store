@@ -25,5 +25,6 @@ namespace Store.Repository.Interface
         IEnumerable<T> GetAll();
         IEnumerable<T> GetMany(Expression<Func<T, bool>> where);
         IQueryable<T> GetAllLazy();
+
     }
 }
