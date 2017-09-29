@@ -17,7 +17,6 @@ namespace Store.Web.Tests
 
 vs studio  
 
-
+    ssss
 sdfsdflkla   asd 
-
     sdfdf
